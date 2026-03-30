@@ -39,9 +39,38 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+// Mobile Menu Toggle
+const menuBtn = document.getElementById('menu-btn');
+const mobileOverlay = document.getElementById('mobile-overlay');
+
+if (menuBtn && mobileOverlay) {
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+    // Lock scroll when menu is open
+    document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // Close menu when clicking a link
+  mobileOverlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuBtn.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
 // Global Page Transition Helper
 window.transitionTo = function(href) {
   document.body.classList.add('page-transitioning');
+  // Close mobile menu if open during transition
+  if (menuBtn) menuBtn.classList.remove('active');
+  if (mobileOverlay) {
+    mobileOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
   setTimeout(() => {
     window.location.href = href;
   }, 400); // Matches the 0.4s CSS transition
