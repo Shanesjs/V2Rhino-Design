@@ -9,11 +9,21 @@
     <!-- Fonts: Manrope & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/main-pTKMWSWi.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-B2s9Hioq.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <style>
+      html, body { background-color: #131313 !important; }
+      .page-loader {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: #131313; z-index: 9999; pointer-events: none;
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+      }
+      .page-loader.fade-out { opacity: 0; visibility: hidden; }
+    </style>
+    <script type="module" crossorigin src="./assets/main-BXT6RBqD.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-BAcfP6vm.css">
   </head>
   <body>
+    <div class="page-loader" id="page-loader"></div>
     <div id="app">
       <!-- Navbar -->
       <nav class="navbar">
@@ -37,10 +47,13 @@
       </nav>
 
       <div class="mobile-overlay" id="mobile-overlay">
+        <div class="mobile-menu-logo" style="margin-bottom: 3rem; opacity: 0.8;">
+          <img src="./logo.webp" alt="Logo" style="max-width: 150px;" />
+        </div>
         <ul class="mobile-nav-links">
           <li><a href="./index.html">HOME</a></li>
           <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./donate.html">DONATE</a></li>
+          <li><a href="./donate.html" class="active">DONATE</a></li>
           <li><a href="./experience.html">YOUR EXPERIENCE</a></li>
           <li><a href="./gallery.html">GALLERY</a></li>
           <li><a href="./contact.html">CONTACT US</a></li>
@@ -54,7 +67,7 @@
           <img src="./logo.png" alt="" />
         </div>
         <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
-          <h1 style="font-size: 5rem;">Donate & Make A Difference</h1>
+          <h1>Donate & Make A Difference</h1>
         </div>
       </section>
 
@@ -65,7 +78,7 @@
           <!-- Left Column: Why Donate & Impact -->
           <div class="text-block">
             <div class="mission-card" style="margin-top: 0;">
-              <h2 class="editorial-headline" style="font-size: 2.5rem; margin-bottom: 2rem;">WHY DONATE</h2>
+              <h2 class="editorial-headline" style="margin-bottom: 2rem;">WHY DONATE</h2>
               <p style="margin-bottom: 1.5rem;">Donations of any amounts are put to use in a number of ways. You can physically experience your contribution, by joining our teams in rhino notchings and every day projects. Be a voluntary ranger, bring your family, friends, colleagues or customers and join the battle against the cruelty of poaching. Make a donation to actively make a difference. Your contribution goes a long way to protect and save rhino, rangers and field-teams, dedicated to fighting the battle raging against them.</p>
               
               <p style="margin-bottom: 1.5rem;">Using an unique technology and methods, we are able to make an impact on the fight against the brutal poaching of rhino and endangered species.</p>
@@ -88,8 +101,8 @@
 
           <!-- Right Column: Donation Contact Form -->
           <div class="text-block">
-            <h2 class="editorial-headline" style="font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: none;">Question about Donations?</h2>
-            <p class="lead-text" style="font-size: 1.2rem; margin-bottom: 2.5rem; color: var(--text-secondary);">Please use our form to get in touch with us and we will get back to you.</p>
+            <h2 class="editorial-headline" style="margin-bottom: 0.5rem; text-transform: none;">Question about Donations?</h2>
+            <p class="lead-text" style="margin-bottom: 2.5rem; color: var(--text-secondary);">Please use our form to get in touch with us and we will get back to you.</p>
 
             <div class="mission-card" style="margin-top: 0; padding: 3rem; border-left: none; border-top: 6px solid var(--primary);">
               <form action="#" method="POST" id="donation-form">

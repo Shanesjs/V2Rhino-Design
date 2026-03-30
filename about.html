@@ -10,8 +10,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      html, body { background-color: #131313 !important; }
+      .page-loader {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: #131313; z-index: 9999; pointer-events: none;
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+      }
+      .page-loader.fade-out { opacity: 0; visibility: hidden; }
+    </style>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      html, body { background-color: #131313 !important; }
+      .page-loader {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: #131313; z-index: 9999; pointer-events: none;
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+      }
+      .page-loader.fade-out { opacity: 0; visibility: hidden; }
+    </style>
   </head>
   <body>
+    <div class="page-loader" id="page-loader"></div>
     <div id="app">
       <!-- Navbar -->
       <nav class="navbar">
@@ -35,9 +56,12 @@
       </nav>
 
       <div class="mobile-overlay" id="mobile-overlay">
+        <div class="mobile-menu-logo" style="margin-bottom: 3rem; opacity: 0.8;">
+          <img src="./logo.webp" alt="Logo" style="max-width: 150px;" />
+        </div>
         <ul class="mobile-nav-links">
           <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./about.html" class="active">ABOUT</a></li>
           <li><a href="./donate.html">DONATE</a></li>
           <li><a href="./experience.html">YOUR EXPERIENCE</a></li>
           <li><a href="./gallery.html">GALLERY</a></li>
@@ -49,10 +73,10 @@
       <!-- Hero Section -->
       <section class="hero" id="hero-section" style="min-height: 60vh;">
         <div class="hero-logo-watermark">
-          <img src="./logo.webp" alt="" />
+          <img src="./logo.png" alt="" />
         </div>
         <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
-          <h1 style="font-size: 5rem;">Our Mission</h1>
+          <h1>Our Mission</h1>
         </div>
       </section>
 
@@ -61,9 +85,9 @@
         
         <!-- STEP 1: THE CRISIS (Screenshot 1 Data) -->
         <div class="split-layout fade-up delay-1" style="align-items: flex-start; margin-top: 5rem;">
-          <div class="text-block" style="flex: 1; padding-right: 4rem;">
-            <h2 class="huge-stat" style="font-size: 7rem; color: #fff; margin-bottom: 0.5rem; line-height: 1;">350+</h2>
-            <p class="highlight-text" style="font-size: 1.6rem; line-height: 1.5; color: var(--primary); margin-bottom: 3.5rem; border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+          <div class="text-block" style="flex: 1;">
+            <h2 class="huge-stat" style="color: #fff; margin-bottom: 0.5rem; line-height: 1;">350+</h2>
+            <p class="highlight-text" style="line-height: 1.5; color: var(--primary); margin-bottom: 3.5rem; border-left: 4px solid var(--primary); padding-left: 1.5rem;">
               / Over 350 rhinos are poached in the northern reserves in 1 year, which equates to 1, every day of the year.
             </p>
             <p class="lead-text" style="font-size: 1.25rem; margin-bottom: 2.5rem; color: #fff; font-weight: 300;">
@@ -86,7 +110,7 @@
              <!-- Background Image Block -->
              <div style="width: 100%; padding-top: 130%; background: url('./bg.webp') center/cover; border-radius: 12px; filter: grayscale(20%); box-shadow: 0 20px 50px rgba(0,0,0,0.5);"></div>
              <!-- Frosted Overlay Card -->
-             <div class="mission-card" style="position: absolute; top: 15%; left: -25%; width: 110%; background: rgba(20,20,20,0.85); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.06); padding: 5rem; box-shadow: 0 30px 60px rgba(0,0,0,0.6);">
+             <div class="mission-card" style="background: rgba(20,20,20,0.85); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.06); padding: 5rem; box-shadow: 0 30px 60px rgba(0,0,0,0.6);">
                <h3 class="orange-title" style="font-size: 1.9rem; margin-bottom: 2.5rem; line-height: 1.4; color: var(--primary);">RHINO SAVE & PROTECT FUND IS DEDICATED TO ENDANGERED SPECIES AND WILDLIFE IN SOUTHERN AFRICA.</h3>
                <p style="font-size: 1.25rem; color: #fff; margin-bottom: 2rem; line-height: 1.6;">Our mission is to save & protect wildlife from poaching – diminishing the number of rhino and endangered species.</p>
                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7;">What makes us different is that we give you an opportunity to join the rangers & teams to participate in projects on the ground, geared to save our rhino and wild-life.</p>
@@ -96,8 +120,8 @@
 
         <!-- STEP 2: THE MISSION (Screenshot 2 Data) -->
         <div class="split-layout fade-up delay-2" style="margin-top: 15rem; align-items: center; margin-bottom: 5rem;">
-          <div class="text-block" style="flex: 1.2; padding-right: 5rem;">
-            <h2 class="editorial-headline" style="color: var(--primary); font-size: 3rem; line-height: 1.1; margin-bottom: 3rem; letter-spacing: -0.02em;">1 RHINO POACHED EVERY DAY FOR A YEAR!</h2>
+          <div class="text-block" style="flex: 1.2;">
+            <h2 class="editorial-headline" style="color: var(--primary); line-height: 1.1; margin-bottom: 3rem; letter-spacing: -0.02em;">1 RHINO POACHED EVERY DAY FOR A YEAR!</h2>
             <p class="lead-text" style="font-size: 1.2rem; margin-bottom: 2.5rem; color: var(--text-secondary); line-height: 1.8;">
               You can actively get involved and physically experience wildlife conservation projects in a tangible way. The fund makes it possible to deploy unique and modern technologies and methods in the fight against poaching, which is depleting our rhino and wildlife.
             </p>
@@ -109,8 +133,8 @@
             </p>
           </div>
           <div class="text-block" style="flex: 0.8; text-align: right;">
-             <h1 class="mega-title" style="font-size: 6.5rem; line-height: 0.85; text-align: right; color: #fff; letter-spacing: -0.04em; margin-bottom: 0;">OUR<br>MISSION</h1>
-             <p style="color: rgba(255,255,255,0.4); font-size: 3rem; font-weight: 800; line-height: 1.1; margin-top: 2rem; letter-spacing: -0.02em;">SAVE & PROTECT<br>WILDLIFE FROM<br>POACHING</p>
+             <h1 class="mega-title" style="line-height: 0.85; text-align: right; color: #fff; letter-spacing: -0.04em; margin-bottom: 0;">OUR<br>MISSION</h1>
+             <p style="color: rgba(255,255,255,0.4); font-weight: 800; line-height: 1.1; margin-top: 2rem; letter-spacing: -0.02em;">SAVE & PROTECT<br>WILDLIFE FROM<br>POACHING</p>
           </div>
         </div>
 
@@ -148,7 +172,7 @@
 
         <!-- STEP 5: THE CALL TO ACTION -->
         <div class="contribution-banner fade-up delay-4" style="margin-top: 10rem; margin-left: -5vw; margin-right: -5vw; padding: 10rem 5vw; background-image: linear-gradient(to bottom, rgba(19,19,19,1) 0%, rgba(19,19,19,0.4) 50%, rgba(19,19,19,1) 100%), url('./baby_rhino.webp'); background-size: cover; background-position: center; border-top: 1px solid rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.02);">
-          <h2 class="orange-headline" style="font-size: 3rem; margin-bottom: 1.5rem; letter-spacing: -0.02em;">We Are Entirely Dependent On Your Help.</h2>
+          <h2 class="orange-headline" style="margin-bottom: 1.5rem; letter-spacing: -0.02em;">We Are Entirely Dependent On Your Help.</h2>
           <p class="lead-text" style="max-width: 800px; margin: 0 auto 4rem auto; font-size: 1.3rem;">The field-rangers, darting equipment, and medical materials have to be covered. These teams work tirelessly to protect our wildlife.</p>
           
           <div style="background: rgba(10, 10, 10, 0.4); padding: 4rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.08); display: inline-block; max-width: 700px; box-shadow: 0 20px 50px rgba(0,0,0,0.4);">

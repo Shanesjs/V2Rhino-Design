@@ -1,23 +1,60 @@
 import './style.css'
 
+// Mobile Menu Elements
+const menuBtn = document.getElementById('menu-btn');
+const mobileOverlay = document.getElementById('mobile-overlay');
+
+// Cinematic Page Loader Management
+const createPageLoader = () => {
+  if (document.querySelector('.page-loader')) return document.querySelector('.page-loader');
+  const loader = document.createElement('div');
+  loader.className = 'page-loader';
+  document.body.prepend(loader);
+  return loader;
+};
+
+const loader = createPageLoader();
+
+// Handle page entry (Fade Out)
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    loader.classList.add('fade-out');
+  }, 300);
+});
+
+// Intercept clicks for internal navigation (Fade In)
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+  if (!link) return;
+  
+  const href = link.getAttribute('href');
+  
+  // Only intercept internal page links, skip hashes or externals
+  if (href && (href.endsWith('.html') || href.startsWith('./')) && !href.startsWith('#')) {
+    e.preventDefault();
+    loader.classList.remove('fade-out');
+    loader.classList.add('active');
+    
+    // Close mobile menu if open
+    if (menuBtn) menuBtn.classList.remove('active');
+    if (mobileOverlay) {
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    setTimeout(() => {
+      window.location.href = href;
+    }, 500); 
+  }
+});
+
 // Add simple parallax effect to hero cursor movement
 document.addEventListener('mousemove', (e) => {
   const hero = document.getElementById('hero-section');
   if (!hero) return;
-  const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-  const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 80;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / 80;
   hero.style.backgroundPosition = `calc(50% + ${xAxis}px) calc(50% + ${yAxis}px)`;
-});
-
-// Add vertical scroll parallax for the background watermark logo
-window.addEventListener('scroll', () => {
-  const watermark = document.querySelector('.hero-logo-watermark');
-  if (watermark) {
-    const scrollY = window.scrollY;
-    // Parallax: moves down more subtly at 20% of the scroll speed
-    // This creates the premium depth effect requested while keeping it readable
-    watermark.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.2}px))`;
-  }
 });
 
 // Intersection Observer for elegant scroll reveal animations
@@ -31,8 +68,6 @@ const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('in-view');
-      // Uncomment to only fire animation once:
-      // observer.unobserve(entry.target); 
     }
   });
 }, observerOptions);
@@ -40,38 +75,10 @@ const observer = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // Mobile Menu Toggle
-const menuBtn = document.getElementById('menu-btn');
-const mobileOverlay = document.getElementById('mobile-overlay');
-
 if (menuBtn && mobileOverlay) {
   menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('active');
     mobileOverlay.classList.toggle('active');
-    // Lock scroll when menu is open
     document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
   });
-
-  // Close menu when clicking a link
-  mobileOverlay.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menuBtn.classList.remove('active');
-      mobileOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  });
 }
-
-// Global Page Transition Helper
-window.transitionTo = function(href) {
-  document.body.classList.add('page-transitioning');
-  // Close mobile menu if open during transition
-  if (menuBtn) menuBtn.classList.remove('active');
-  if (mobileOverlay) {
-    mobileOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  
-  setTimeout(() => {
-    window.location.href = href;
-  }, 400); // Matches the 0.4s CSS transition
-};
