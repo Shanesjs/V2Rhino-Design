@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your Experience - Join Rhino Save & Protect in the field." />
+    <title>Your Experience - Rhino Save & Protect</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="/" class="logo-link">
+          <img src="/logo.webp" alt="Rhino Save & Protect Logo" class="logo-img" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/donate.html">DONATE</a></li>
+          <li><a href="/experience.html" class="active">YOUR EXPERIENCE</a></li>
+          <li><a href="/gallery.html">GALLERY</a></li>
+          <li><a href="/contact.html">CONTACT US</a></li>
+          <li><a href="/book.html">BOOK</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero" id="hero-section" style="min-height: 50vh;">
+        <div class="hero-logo-watermark">
+          <img src="/logo.webp" alt="" />
+        </div>
+        <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
+          <h1 style="font-size: 5rem;">Your Experience</h1>
+        </div>
+      </section>
+
+      <!-- Main Content Container -->
+      <section class="services" style="z-index: 2; margin-top: -2px; padding: 8rem 5vw;">
+        <!-- CSS Cinematic Animation Background (Pitch Black Buffer & Glowing Gradient) -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(19, 19, 19, 1) 0%, rgba(19, 19, 19, 1) 10%, rgba(19, 19, 19, 0.45) 50%, rgba(19, 19, 19, 1) 100%); z-index: 1;"></div>
+        </div>
+
+        <div class="service-glow-orb" style="z-index: 1;"></div>
+
+        <!-- Experience Content -->
+        <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;">
+          <h2 class="meet-title fade-up">THE FRONTLINE</h2>
+          <p class="lead-text fade-up delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 5rem auto;">
+            Join our expert rangers and pilots on the ground. We provide a hands-on, highly immersive involvement program where you become part of the actual anti-poaching and notching operations.
+          </p>
+
+          <div class="grid fade-up delay-2">
+            <!-- Experience Card 1 -->
+            <div class="card" onclick="transitionTo('/book.html')">
+              <h3>Aerial Patrol Operations</h3>
+              <p>Climb aboard our specialized pursuit helicopters. Experience low-level tactical flying as our pilots survey the reserves, identify high-risk zones, and monitor the rhino herds from the air.</p>
+            </div>
+            
+            <!-- Experience Card 2 -->
+            <div class="card" onclick="transitionTo('/book.html')">
+              <h3>Rhino Notching Clinics</h3>
+              <p>Work directly alongside world-class veterinarians. Assist in the physical darting process, gathering DNA samples, and inserting highly technical tracking microchips into sedated rhinos.</p>
+            </div>
+            
+            <!-- Experience Card 3 -->
+            <div class="card" onclick="transitionTo('/book.html')">
+              <h3>Ground Tracking Missions</h3>
+              <p>Learn the ancient and critical art of tracking on foot. Join the K9 units and ground patrols to analyze tracks, identify poaching syndicates' movements, and secure the perimeter.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Banner -->
+      <section class="about-content" style="padding: 0 5vw;">
+        <div class="team-banner fade-up delay-3" style="margin-top: 5rem; margin-bottom: 5rem;">
+          <div class="banner-split">
+            <div class="banner-image"></div>
+            <div class="banner-text">
+              <div>
+                <h3 style="margin-bottom: 2rem;">Ready to deploy?</h3>
+                <p style="color: var(--text-secondary); font-size: 1.25rem; line-height: 1.6; margin-bottom: 2.5rem;">The reserves are active, and our teams are moving. Lock in your dates to join the frontline.</p>
+                <button class="btn btn-primary" onclick="window.location.href='/book.html'" style="padding: 1.2rem 2.5rem; font-size: 1.1rem;">BOOK YOUR EXPERIENCE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer fade-up delay-4">
+        <!-- Re-use footer here -->
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Contact us</h4>
+            <div class="footer-line"></div>
+            <p>+27 84 219 9000</p>
+            <p>+27 82 576 6190</p>
+            <p>info@rhinosaveandprotect.com</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <div class="footer-line"></div>
+            <ul class="quick-links">
+              <li><a href="/">» Home</a></li>
+              <li><a href="/about.html">» About</a></li>
+              <li><a href="/experience.html">» Your Experience</a></li>
+              <li><a href="/gallery.html">» Gallery</a></li>
+              <li><a href="/contact.html">» Contact us</a></li>
+              <li><a href="/book.html">» Book with us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Donate</h4>
+            <div class="footer-line"></div>
+            <p style="margin-bottom: 1.5rem; color: #fff;">Donate for a great cause!</p>
+            <button class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;" onclick="window.location.href='/donate.html'">DONATE TO US</button>
+          </div>
+          <div class="footer-col">
+            <h4>Stay in Touch</h4>
+            <div class="footer-line"></div>
+            <div class="social-icons">
+              <a href="#" class="social-icon">Instagram</a>
+              <a href="#" class="social-icon">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

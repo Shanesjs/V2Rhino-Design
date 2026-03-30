@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Visual Archives - Rhino Save & Protect." />
+    <title>Gallery - Rhino Save & Protect</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="/" class="logo-link">
+          <img src="/logo.webp" alt="Rhino Save & Protect Logo" class="logo-img" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/donate.html">DONATE</a></li>
+          <li><a href="/experience.html">YOUR EXPERIENCE</a></li>
+          <li><a href="/gallery.html" class="active">GALLERY</a></li>
+          <li><a href="/contact.html">CONTACT US</a></li>
+          <li><a href="/book.html">BOOK</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero" id="hero-section" style="min-height: 40vh;">
+        <div class="hero-logo-watermark">
+          <img src="/logo.webp" alt="" />
+        </div>
+        <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
+          <h1 style="font-size: 5rem;">Visual Archives</h1>
+        </div>
+      </section>
+
+      <!-- Gallery Grid -->
+      <section class="services" style="z-index: 2; margin-top: -2px; padding: 6rem 5vw;">
+        <!-- CSS Cinematic Animation Background (Pitch Black Buffer & Glowing Gradient) -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(19, 19, 19, 1) 0%, rgba(19, 19, 19, 1) 10%, rgba(19, 19, 19, 0.45) 50%, rgba(19, 19, 19, 1) 100%); z-index: 1;"></div>
+        </div>
+        <div class="service-glow-orb" style="z-index: 1;"></div>
+
+        <div style="position: relative; z-index: 2; max-width: 1400px; margin: 0 auto;">
+          <h2 class="meet-title fade-up">THE FRONTLINE LENS</h2>
+          <p class="lead-text fade-up delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 5rem auto;">
+            Unfiltered glimpses into the daily lives of our rangers, the harsh reality of the field, and the breathtaking wildlife we fight to protect.
+          </p>
+
+          <div class="grid fade-up delay-2" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem;">
+            <!-- Placeholder Gallery Image 1 -->
+            <div style="position: relative; width: 100%; padding-top: 66%; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase;">[ Aerial Operations Archive ]</p>
+              </div>
+            </div>
+
+            <!-- Placeholder Gallery Image 2 -->
+            <div style="position: relative; width: 100%; padding-top: 66%; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase;">[ Rhino Notching Clinic Archive ]</p>
+              </div>
+            </div>
+
+            <!-- Placeholder Gallery Image 3 -->
+            <div style="position: relative; width: 100%; padding-top: 66%; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase;">[ Anti-Poaching K9 Unit Archive ]</p>
+              </div>
+            </div>
+
+            <!-- Placeholder Gallery Image 4 -->
+            <div style="position: relative; width: 100%; padding-top: 66%; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase;">[ Ranger Ground Patrols Archive ]</p>
+              </div>
+            </div>
+
+            <!-- Placeholder Gallery Image 5 -->
+            <div style="position: relative; width: 100%; padding-top: 66%; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase;">[ Vet Treatment Archive ]</p>
+              </div>
+            </div>
+
+            <!-- Placeholder Gallery Image 6 -->
+            <div style="position: relative; width: 100%; padding-top: 66%; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase;">[ Savanna Sunset Archive ]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <footer class="footer fade-up delay-3">
+        <!-- Re-use footer here -->
+        <div class="footer-grid">
+          <div class="footer-col" style="grid-column: span 12; text-align: center;">
+            <img src="/logo.webp" alt="Logo" style="max-width: 200px; margin-bottom: 2rem; opacity: 0.8;" />
+            <p>© 2026 Rhino Save & Protect</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

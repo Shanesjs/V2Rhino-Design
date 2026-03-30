@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rhino Save & Protect - Fighting poaching and saving rhinos in Southern Africa." />
+    <title>Rhino Save & Protect</title>
+    <!-- Fonts: Manrope & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="#" class="logo-link">
+          <img src="/logo.webp" alt="Rhino Save & Protect Logo" class="logo-img" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="/" class="active">HOME</a></li>
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/donate.html">DONATE</a></li>
+          <li><a href="/experience.html">YOUR EXPERIENCE</a></li>
+          <li><a href="/gallery.html">GALLERY</a></li>
+          <li><a href="/contact.html">CONTACT US</a></li>
+          <li><a href="/book.html">BOOK</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero" id="hero-section">
+        <!-- Parallax Background Logo Watermark -->
+        <div class="hero-logo-watermark">
+          <img src="/logo.webp" alt="" />
+        </div>
+        <div class="hero-content fade-up">
+          <h1 style="font-size: 5rem; letter-spacing: -0.02em;">FRONTLINE CONSERVATION</h1>
+          <p>Run by passionate bush-pilots and dedicated veterinarians, we use forefront technology to combat the poaching crisis. Join our rapid-response teams on the ground in South Africa and physically experience wildlife protection in action.</p>
+          <div class="cta-group">
+            <button class="btn btn-primary" onclick="window.location.href='/about.html'">View Our Mission</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Grid -->
+      <section class="services" style="position: relative; overflow: hidden; padding: 12rem 5vw; margin-top: -2px; z-index: 2;">
+        <!-- CSS Cinematic Animation Background -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden;">
+          <div class="ranger-pan-anim"></div>
+          <!-- Heavy gradient tint to fuse the background into the layout -->
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(19, 19, 19, 1) 0%, rgba(19, 19, 19, 1) 10%, rgba(19, 19, 19, 0.45) 50%, rgba(19, 19, 19, 1) 100%); z-index: 1;"></div>
+        </div>
+
+        <div class="service-glow-orb" style="z-index: 1;"></div>
+        
+        <div style="position: relative; z-index: 2;">
+        <h2 class="fade-up">Our Core Operations</h2>
+        <div class="grid">
+          <div class="card fade-up delay-1" onclick="transitionTo('/about.html')">
+            <h3>Aerial & Ground Patrols</h3>
+            <p>Driven by passionate bush-pilots and field-rangers donating their dedicated time to anti-poaching operations.</p>
+          </div>
+          <div class="card fade-up delay-2" onclick="transitionTo('/about.html')">
+            <h3>Forefront Technology</h3>
+            <p>Deploying unique and modern wildlife tracking technologies to safely monitor herds and diminish poaching.</p>
+          </div>
+          <div class="card fade-up delay-3" onclick="transitionTo('/about.html')">
+            <h3>Veterinary Response</h3>
+            <p>Supplying critical darting equipment, medicines, and rapid medical care for injured and separated rhinos.</p>
+          </div>
+          <div class="card fade-up delay-4" onclick="transitionTo('/about.html')">
+            <h3>Immersive Notchings</h3>
+            <p>Actively experience conservation. Join our field teams as a voluntary ranger on real rhino notchings and everyday projects.</p>
+          </div>
+        </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="footer fade-up delay-2">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Contact us</h4>
+            <div class="footer-line"></div>
+            <p>+27 84 219 9000</p>
+            <p>+27 82 576 6190</p>
+            <p>info@rhinosaveandprotect.com</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <div class="footer-line"></div>
+            <ul class="quick-links">
+              <li><a href="/">» Home</a></li>
+              <li><a href="/about.html">» About</a></li>
+              <li><a href="/experience.html">» Your Experience</a></li>
+              <li><a href="/gallery.html">» Gallery</a></li>
+              <li><a href="/contact.html">» Contact us</a></li>
+              <li><a href="/book.html">» Book with us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Donate</h4>
+            <div class="footer-line"></div>
+            <p style="margin-bottom: 1.5rem; color: #fff;">Donate for a great cause!</p>
+            <button class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; letter-spacing: 0.05em; box-shadow: none;" onclick="window.location.href='/donate.html'">DONATE TO US</button>
+          </div>
+          <div class="footer-col">
+            <h4>Stay in Touch</h4>
+            <div class="footer-line"></div>
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

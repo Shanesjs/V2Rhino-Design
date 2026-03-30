@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Book an Experience with Rhino Save & Protect." />
+    <title>Book - Rhino Save & Protect</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="/" class="logo-link">
+          <img src="/logo.webp" alt="Rhino Save & Protect Logo" class="logo-img" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/donate.html">DONATE</a></li>
+          <li><a href="/experience.html">YOUR EXPERIENCE</a></li>
+          <li><a href="/gallery.html">GALLERY</a></li>
+          <li><a href="/contact.html">CONTACT US</a></li>
+          <li><a href="/book.html" class="active">BOOK</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero" id="hero-section" style="min-height: 40vh;">
+        <div class="hero-logo-watermark">
+          <img src="/logo.webp" alt="" />
+        </div>
+        <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
+          <h1 style="font-size: 5rem;">Deployment Form</h1>
+        </div>
+      </section>
+
+      <!-- Booking System -->
+      <section class="services" style="z-index: 2; margin-top: -2px; padding: 6rem 5vw;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(19, 19, 19, 1) 0%, rgba(19, 19, 19, 1) 10%, rgba(19, 19, 19, 0.45) 50%, rgba(19, 19, 19, 1) 100%); z-index: 1;"></div>
+        
+        <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+          <h2 class="meet-title fade-up">REQUEST TO JOIN</h2>
+          <p class="lead-text fade-up delay-1" style="text-align: center; margin-bottom: 4rem;">Select your parameters to book a Frontline Experience. Due to the high risk and sensitive nature of operations, all applicants are subject to vetting by our command team.</p>
+
+          <div class="mission-card fade-up delay-2">
+            <h3 style="color: #fff; font-size: 2rem; margin-bottom: 2rem;">Application Portfolio</h3>
+            <form onsubmit="event.preventDefault(); alert('Booking application secured. Our team will contact you for vetting.');">
+              <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div>
+                  <label for="firstname">First Name</label>
+                  <input type="text" id="firstname" class="form-control" required>
+                </div>
+                <div>
+                  <label for="lastname">Last Name</label>
+                  <input type="text" id="lastname" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="experience">Select Your Experience</label>
+                <select id="experience" class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F27131%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: .65rem auto;">
+                  <option value="" disabled selected>Select an option...</option>
+                  <option value="aerial">Aerial Patrol Operation</option>
+                  <option value="notching">Rhino Notching Clinic</option>
+                  <option value="ground">Ground Tracking Mission</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="dates">Proposed Deployment Dates</label>
+                <input type="text" id="dates" class="form-control" placeholder="e.g. October 2026 or Spring" required>
+              </div>
+
+              <div class="form-group">
+                <label for="note">Additional Information (Group size, medical, etc.)</label>
+                <textarea id="note" class="form-control" style="min-height: 120px;"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; padding: 1.2rem; font-size: 1.1rem; letter-spacing: 0.1em;">SUBMIT CLEARANCE REQUEST</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
