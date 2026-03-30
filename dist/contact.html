@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact - Get in touch with Rhino Save & Protect." />
+    <title>Contact Us - Rhino Save & Protect</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="./assets/main-BiWZTLNM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-CcUQO9mT.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="/" class="logo-link">
+          <img src="./logo.webp" alt="Rhino Save & Protect Logo" class="logo-img" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/donate.html">DONATE</a></li>
+          <li><a href="/experience.html">YOUR EXPERIENCE</a></li>
+          <li><a href="/gallery.html">GALLERY</a></li>
+          <li><a href="/contact.html" class="active">CONTACT US</a></li>
+          <li><a href="/book.html">BOOK</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero" id="hero-section" style="min-height: 40vh;">
+        <div class="hero-logo-watermark">
+          <img src="./logo.webp" alt="" />
+        </div>
+        <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
+          <h1 style="font-size: 5rem;">Contact Us</h1>
+        </div>
+      </section>
+
+      <!-- Main Layout -->
+      <section class="services" style="z-index: 2; margin-top: -2px; padding: 6rem 5vw;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(19, 19, 19, 1) 0%, rgba(19, 19, 19, 1) 10%, rgba(19, 19, 19, 0.45) 50%, rgba(19, 19, 19, 1) 100%); z-index: 1;"></div>
+        <div class="service-glow-orb" style="z-index: 1;"></div>
+        
+        <div class="split-layout fade-up" style="position: relative; z-index: 2; align-items: stretch; margin-top: 4rem;">
+          <!-- Left: Contact Information -->
+          <div class="text-block" style="padding-right: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            <h2 class="editorial-headline" style="font-size: 3rem; margin-bottom: 2rem;">REACH BASE CAMP.</h2>
+            <p class="lead-text" style="font-size: 1.25rem;">Whether you are looking to become a corporate partner, join an experience, or require more information regarding donations, please reach out to us below.</p>
+            
+            <div style="margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 3rem;">
+              <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem; text-transform: uppercase;">Direct Intel</h3>
+              <p style="font-size: 1.2rem; color: #fff; line-height: 1.8;">
+                Phone 1: +27 84 219 9000<br>
+                Phone 2: +27 82 576 6190<br>
+                Email: info@rhinosaveandprotect.com<br>
+              </p>
+            </div>
+          </div>
+          
+          <!-- Right: Contact Form -->
+          <div class="mission-card" style="margin-top: 0;">
+            <h3 style="color: #fff; font-size: 2rem; margin-bottom: 2rem;">Send a Message</h3>
+            <form id="contactForm" onsubmit="event.preventDefault(); alert('Message transmission protocol logged! Backend required for dispatch.');">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F27131%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: .65rem auto;">
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Donation Question">Donation Info</option>
+                  <option value="Experience Booking">Experience Info</option>
+                  <option value="Press/Media">Press/Media</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" class="form-control" placeholder="How can we help?" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 1.2rem;">TRANSMIT</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer fade-up delay-1">
+        <!-- Minimal Footer re-use -->
+        <div class="footer-grid">
+          <div class="footer-col" style="grid-column: span 12; text-align: center;">
+            <img src="./logo.webp" alt="Logo" style="max-width: 200px; margin-bottom: 2rem; opacity: 0.8;" />
+            <p>© 2026 Rhino Save & Protect</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
