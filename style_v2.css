@@ -58,13 +58,14 @@ section { padding: 10rem 0; position: relative; width: 100%; }
 .fade-in { opacity: 0; transition: opacity 1.5s ease; }
 .fade-in.active { opacity: 1; }
 
-/* --- Noise Overlay --- */
+/* --- Film Grain Overlay (Native) --- */
 body::before {
     content: "";
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.05;
+    background: radial-gradient(circle, transparent 20%, var(--black) 100%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fracture' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
     pointer-events: none;
     z-index: 9998;
 }
@@ -93,8 +94,16 @@ nav.scrolled {
     flex: 1;
 }
 
-.logo img { height: 150px; width: auto; filter: brightness(1.2) drop-shadow(0 0 30px rgba(255,255,255,0.2)); transition: var(--transition-fast); }
-.logo:hover img { transform: scale(1.08); filter: brightness(1.4) drop-shadow(0 0 40px rgba(255,255,255,0.3)); }
+.logo img { 
+    height: 100px; width: auto; 
+    filter: brightness(1.2) drop-shadow(0 0 20px rgba(255,255,255,0.1)); 
+    transition: var(--transition-fast); 
+}
+.logo span {
+    font-size: 0.65rem; color: var(--earth); opacity: 0.6;
+    letter-spacing: 0.3em; margin-top: 15px; font-weight: 800;
+}
+.logo:hover img { transform: translateY(-5px); filter: brightness(1.4); }
 
 .nav-wrapper { flex: 2; display: flex; justify-content: center; }
 .nav-links { display: flex; gap: 2.5rem; align-items: center; }
@@ -245,12 +254,17 @@ footer { background: var(--black); color: var(--white); padding: 8rem 0 4rem; bo
 .mission-overlay-card p { font-size: 1.1rem; color: var(--white); opacity: 0.8; margin: 0; }
 
 /* --- Mobile / Responsive --- */
+@media (max-width: 1024px) {
+    .container { padding: 0 2rem; }
+    .mission-grid { gap: 4rem; }
+}
+
 @media (max-width: 991px) {
     html { width: 100vw; overflow-x: hidden; }
     body { width: 100vw; overflow-x: hidden; }
     
     .container { padding: 0 1.5rem; }
-    .nav-container { padding: 0 1rem; }
+    .nav-container { padding: 0 1.5rem; }
     
     .logo img { height: 70px; }
     .nav-cta .book-btn { display: none; }
@@ -268,20 +282,20 @@ footer { background: var(--black); color: var(--white); padding: 8rem 0 4rem; bo
     .nav-links { flex-direction: column; gap: 3rem; text-align: center; }
     .nav-links a { font-size: 1.5rem; opacity: 1; }
     
-    section { padding: 6rem 0; width: 100%; }
+    section { padding: 5rem 0 !important; width: 100%; }
     
-    .hero { min-height: 60vh; }
-    .hero h1 { font-size: 3rem; margin-bottom: 1.5rem; width: 100%; }
+    .hero { min-height: 50vh !important; }
+    .hero h1 { font-size: 3rem !important; margin-bottom: 1.5rem; width: 100%; line-height: 1.1 !important; }
     .hero p { font-size: 1.1rem; padding: 0 1rem; }
     
-    .stats-bar { padding: 6rem 0; }
-    .stats-grid { grid-template-columns: 1fr; gap: 4rem; }
+    .stats-bar { padding: 5rem 0 !important; }
+    .stats-grid { grid-template-columns: 1fr; gap: 3rem; }
     .stat-item .number { font-size: 4rem; }
     
     .ops-grid { grid-template-columns: 1fr; gap: 2rem; }
     .op-card { padding: 3rem 2rem; }
     
-    .mission-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+    .mission-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
     .mission-content blockquote { font-size: 2.2rem; }
     
     .footer-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
@@ -289,16 +303,62 @@ footer { background: var(--black); color: var(--white); padding: 8rem 0 4rem; bo
     .social-strip { justify-content: center; }
     .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
 
+    /* Fix Overlaps & Card Purity */
+    .booking-card, .contact-form, .donation-card {
+        margin-top: 0 !important;
+        margin-bottom: 2rem !important;
+        padding: 3rem 1.5rem !important;
+        border-radius: 12px !important;
+    }
+
+    .container[style*="margin-top: -10rem"],
+    .container[style*="margin-top:-10rem"] {
+        margin-top: 0 !important;
+    }
+
+    .booking-grid, .form-row, .contact-grid, .donation-grid, .exp-detail-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
     /* About Specifics */
-    .split-grid { grid-template-columns: 1fr; gap: 4rem; }
-    .about-text h2 { font-size: 2.5rem; }
+    .split-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-text h2 { font-size: 2.5rem !important; }
     .huge-stat { font-size: 5rem; }
     .partner-list { grid-template-columns: 1fr; }
-    .mission-overlay-card { margin-top: 0; padding: 2.5rem; }
+    .mission-overlay-card { margin-top: 0 !important; padding: 2.5rem !important; border-radius: 12px !important; }
+    
+    .booking-card h2, .contact-info h2, .donation-info h2, .exp-hero h2, .ops h2 {
+        font-size: 2.2rem !important;
+    }
+    
+    .logo span { font-size: 0.85rem !important; opacity: 0.8 !important; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem !important; }
+    h2 { font-size: 2.2rem !important; }
+    h3 { font-size: 1.8rem !important; }
+
+    .btn { width: 100% !important; text-align: center; justify-content: center; display: flex; min-height: 48px; align-items: center; }
+    
+    .exp-hero h2 { margin-top: 5rem !important; font-size: 2.5rem !important; }
+    .exp-op-banner { margin: 0 1.5rem !important; height: 35vh !important; border-radius: 15px !important; }
+    .exp-description { font-size: 1.1rem !important; }
 }
 
 @media (max-width: 480px) {
-    .hero h1 { font-size: 2.5rem; }
+    .hero h1 { font-size: 2.2rem !important; }
+    .hero p { font-size: 1rem; }
     .mission-content blockquote { font-size: 1.8rem; }
-    .logo img { height: 60px; }
+    .logo img { height: 55px; }
+    
+    .stat-item .number { font-size: 3.2rem; }
+    .huge-stat { font-size: 4rem; }
+
+    .booking-card h2, .contact-info h2, .donation-info h2, .exp-hero h2, .ops h2 {
+        font-size: 1.8rem !important;
+    }
 }
+
+
