@@ -1,230 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="About Rhino Save & Protect - Our mission to save the rhinos." />
-    <title>About - Rhino Save & Protect</title>
-    <!-- Fonts: Manrope & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-    <style>
-      html, body { background-color: #131313 !important; }
-      .page-loader {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: #131313; z-index: 9999; pointer-events: none;
-        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
-      }
-      .page-loader.fade-out { opacity: 0; visibility: hidden; }
-    </style>
-    <link rel="stylesheet" href="./style.css">
-    <style>
-      html, body { background-color: #131313 !important; }
-      .page-loader {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: #131313; z-index: 9999; pointer-events: none;
-        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
-      }
-      .page-loader.fade-out { opacity: 0; visibility: hidden; }
-    </style>
-  </head>
-  <body>
-    <div class="page-loader" id="page-loader"></div>
-    <div id="app">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <a href="./index.html" class="logo-link">
-          <img src="./logo.webp" alt="Rhino Save & Protect Logo" class="logo-img" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html" class="active">ABOUT</a></li>
-          <li><a href="./donate.html">DONATE</a></li>
-          <li><a href="./experience.html">YOUR EXPERIENCE</a></li>
-          <li><a href="./gallery.html">GALLERY</a></li>
-          <li><a href="./contact.html">CONTACT US</a></li>
-          <li><a href="./book.html">BOOK</a></li>
-        </ul>
-        <div class="menu-btn" id="menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About Our Mission | Rhino Save & Protect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_v2.css">
+</head>
+<body class="about-page">
+    <div id="page-transition"></div>
 
-      <div class="mobile-overlay" id="mobile-overlay">
-        <div class="mobile-menu-logo" style="margin-bottom: 3rem; opacity: 0.8;">
-          <img src="./logo.webp" alt="Logo" style="max-width: 150px;" />
-        </div>
-        <ul class="mobile-nav-links">
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html" class="active">ABOUT</a></li>
-          <li><a href="./donate.html">DONATE</a></li>
-          <li><a href="./experience.html">YOUR EXPERIENCE</a></li>
-          <li><a href="./gallery.html">GALLERY</a></li>
-          <li><a href="./contact.html">CONTACT US</a></li>
-          <li><a href="./book.html">BOOK</a></li>
-        </ul>
-      </div>
-
-      <!-- Hero Section -->
-      <section class="hero" id="hero-section" style="min-height: 60vh;">
-        <div class="hero-logo-watermark">
-          <img src="./logo.png" alt="" />
-        </div>
-        <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
-          <h1>Our Mission</h1>
-        </div>
-      </section>
-
-      <!-- About Details Layout -->
-      <section class="about-content" style="max-width: 1400px; margin: 0 auto; padding: 0 5vw;">
-        
-        <!-- STEP 1: THE CRISIS (Screenshot 1 Data) -->
-        <div class="split-layout fade-up delay-1" style="align-items: flex-start; margin-top: 5rem;">
-          <div class="text-block" style="flex: 1;">
-            <h2 class="huge-stat" style="color: #fff; margin-bottom: 0.5rem; line-height: 1;">350+</h2>
-            <p class="highlight-text" style="line-height: 1.5; color: var(--primary); margin-bottom: 3.5rem; border-left: 4px solid var(--primary); padding-left: 1.5rem;">
-              / Over 350 rhinos are poached in the northern reserves in 1 year, which equates to 1, every day of the year.
-            </p>
-            <p class="lead-text" style="font-size: 1.25rem; margin-bottom: 2.5rem; color: #fff; font-weight: 300;">
-              Rhino Save & Protect is an NGO run by passionate bush-pilots and vets and donate most the hours required for the anti-poaching of rhino projects. The field-rangers, darting equipment and medical materials have to be covered but many hours are donated by our team to the cause.
-            </p>
-            
-            <h3 style="margin-top: 4rem; color: #fff; font-size: 1.6rem; text-transform: uppercase; margin-bottom: 2rem;">Partners:</h3>
-            <ul class="partner-list" style="display: grid; grid-template-columns: 1fr; gap: 1.2rem;">
-              <li style="font-size: 1.2rem; color: var(--text-secondary);">Rhino 911</li>
-              <li style="font-size: 1.2rem; color: var(--text-secondary);">Madikwe Wildlife Foundation</li>
-              <li style="font-size: 1.2rem; color: var(--text-secondary);">Heli-Game services</li>
-              <li style="font-size: 1.2rem; color: var(--text-secondary);">Mankwe Private Reserve</li>
-              <li style="font-size: 1.2rem; color: var(--text-secondary);">Thabatholo Private Reserve</li>
-              <li style="font-size: 1.2rem; color: var(--text-secondary);">Indigo Helicopters and bush pilots</li>
-            </ul>
-          </div>
-
-          <!-- Glass Card Overlay Image -->
-          <div class="text-block" style="flex: 1; position: relative;">
-             <!-- Background Image Block -->
-             <div style="width: 100%; padding-top: 130%; background: url('./bg.webp') center/cover; border-radius: 12px; filter: grayscale(20%); box-shadow: 0 20px 50px rgba(0,0,0,0.5);"></div>
-             <!-- Frosted Overlay Card -->
-             <div class="mission-card" style="background: rgba(20,20,20,0.85); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.06); padding: 5rem; box-shadow: 0 30px 60px rgba(0,0,0,0.6);">
-               <h3 class="orange-title" style="font-size: 1.9rem; margin-bottom: 2.5rem; line-height: 1.4; color: var(--primary);">RHINO SAVE & PROTECT FUND IS DEDICATED TO ENDANGERED SPECIES AND WILDLIFE IN SOUTHERN AFRICA.</h3>
-               <p style="font-size: 1.25rem; color: #fff; margin-bottom: 2rem; line-height: 1.6;">Our mission is to save & protect wildlife from poaching – diminishing the number of rhino and endangered species.</p>
-               <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7;">What makes us different is that we give you an opportunity to join the rangers & teams to participate in projects on the ground, geared to save our rhino and wild-life.</p>
-             </div>
-          </div>
-        </div>
-
-        <!-- STEP 2: THE MISSION (Screenshot 2 Data) -->
-        <div class="split-layout fade-up delay-2" style="margin-top: 15rem; align-items: center; margin-bottom: 5rem;">
-          <div class="text-block" style="flex: 1.2;">
-            <h2 class="editorial-headline" style="color: var(--primary); line-height: 1.1; margin-bottom: 3rem; letter-spacing: -0.02em;">1 RHINO POACHED EVERY DAY FOR A YEAR!</h2>
-            <p class="lead-text" style="font-size: 1.2rem; margin-bottom: 2.5rem; color: var(--text-secondary); line-height: 1.8;">
-              You can actively get involved and physically experience wildlife conservation projects in a tangible way. The fund makes it possible to deploy unique and modern technologies and methods in the fight against poaching, which is depleting our rhino and wildlife.
-            </p>
-            <p class="lead-text" style="font-size: 1.2rem; margin-bottom: 2.5rem; color: var(--text-secondary); line-height: 1.8;">
-              The success of these projects, is due to highly skilled and passionate teams, working together, each with extensive experience.
-            </p>
-            <p class="lead-text" style="font-size: 1.2rem; margin-bottom: 2.5rem; color: var(--text-secondary); line-height: 1.8;">
-              These comprise of specialised game pilots, trackers, rangers and vetenerians, together with the use of forefront technology and methods. These teams work tirelessly to protect our wildlife and are entirely dependent on your help and involvement.
-            </p>
-          </div>
-          <div class="text-block" style="flex: 0.8; text-align: right;">
-             <h1 class="mega-title" style="line-height: 0.85; text-align: right; color: #fff; letter-spacing: -0.04em; margin-bottom: 0;">OUR<br>MISSION</h1>
-             <p style="color: rgba(255,255,255,0.4); font-weight: 800; line-height: 1.1; margin-top: 2rem; letter-spacing: -0.02em;">SAVE & PROTECT<br>WILDLIFE FROM<br>POACHING</p>
-          </div>
-        </div>
-
-        <!-- STEP 3: MEET THE TEAM (Missing Photo Grid) -->
-        <div class="split-layout fade-up delay-2" style="margin-top: 10rem; align-items: flex-start; margin-bottom: 5rem;">
-          <div class="text-block" style="flex: 1;">
-            <h2 class="editorial-headline" style="font-size: 2.5rem; margin-bottom: 1.5rem;">MEET THE TEAM</h2>
-            <p style="margin-bottom: 2.5rem; color: var(--text-secondary); font-size: 1.2rem; line-height: 1.6;">The specialized crews handling aerial operations, wildlife darting, and medical engineering.</p>
-          </div>
-          <div class="text-block" style="flex: 2;">
-            <!-- TEAM PHOTO PLACEHOLDER -->
-            <div style="width: 100%; padding-top: 50%; position: relative; background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" style="color: var(--text-secondary); margin-bottom: 1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; letter-spacing: 0.05em; margin: 0; text-transform: uppercase;">[ Place Team Photo Here ]</p>
-              </div>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./logo.webp" alt="Rhino Save & Protect">
+                <span style="font-size: 0.7rem; opacity: 0.5; margin-left: 5px;">V2</span>
+            </a>
+            <div class="nav-wrapper" id="nav-wrapper">
+                <div class="nav-links">
+                    <a href="index.html">HOME</a>
+                    <a href="about.html" class="active">ABOUT</a>
+                    <a href="donate.html">DONATE</a>
+                    <a href="experience.html">YOUR EXPERIENCE</a>
+                    <a href="gallery.html">GALLERY</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <!-- STEP 4: THE EXPERIENCES (Differentiator) -->
-        <div class="team-banner fade-up delay-3" style="margin-top: 8rem;">
-          <div class="banner-split">
-            <div class="banner-image"></div>
-            <div class="banner-text">
-              <div>
-                <h3 style="margin-bottom: 2rem;">What makes us different? We give you an opportunity to join the rangers.</h3>
-                <p style="color: var(--text-secondary); font-size: 1.25rem; line-height: 1.6; margin-bottom: 2.5rem;">You can actively get involved and physically experience wildlife conservation projects in a tangible way. Book an experience and fight alongside us to save our rhino and wildlife.</p>
-                <!-- CTA Button -->
-                <button class="btn btn-primary" onclick="window.location.href='./experience.html'" style="padding: 1.2rem 2.5rem; font-size: 1.1rem; letter-spacing: 0.05em;">EXPLORE THE EXPERIENCE</button>
-              </div>
+            <div class="nav-cta">
+                <a href="book.html" class="book-btn">BOOK</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-          </div>
         </div>
+    </nav>
 
-        <!-- STEP 5: THE CALL TO ACTION -->
-        <div class="contribution-banner fade-up delay-4" style="margin-top: 10rem; margin-left: -5vw; margin-right: -5vw; padding: 10rem 5vw; background-image: linear-gradient(to bottom, rgba(19,19,19,1) 0%, rgba(19,19,19,0.4) 50%, rgba(19,19,19,1) 100%), url('./baby_rhino.webp'); background-size: cover; background-position: center; border-top: 1px solid rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.02);">
-          <h2 class="orange-headline" style="margin-bottom: 1.5rem; letter-spacing: -0.02em;">We Are Entirely Dependent On Your Help.</h2>
-          <p class="lead-text" style="max-width: 800px; margin: 0 auto 4rem auto; font-size: 1.3rem;">The field-rangers, darting equipment, and medical materials have to be covered. These teams work tirelessly to protect our wildlife.</p>
-          
-          <div style="background: rgba(10, 10, 10, 0.4); padding: 4rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.08); display: inline-block; max-width: 700px; box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
-            <p style="font-size: 1.3rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 2.5rem; font-weight: 400;">Your contribution goes a long way to protect and save rhinos and the rangers fighting the battle raging against them.</p>
-            <button class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 3rem;" onclick="window.location.href='./donate.html'">Donate page</button>
-          </div>
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-bg" style="background-image: linear-gradient(to bottom, rgba(44, 46, 30, 0.6), rgba(20, 20, 16, 0.95)), url('hero_v2.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Our Mission</h1>
+            <p>Direct action. High-end technology. Unwavering dedication to the South African Rhino.</p>
         </div>
+    </section>
 
-      </section>
-      <!-- Footer -->
-      <footer class="footer fade-up delay-2">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h4>Contact us</h4>
-            <div class="footer-line"></div>
-            <p>+27 84 219 9000</p>
-            <p>+27 82 576 6190</p>
-            <p>info@rhinosaveandprotect.com</p>
-          </div>
-          <div class="footer-col">
-            <h4>Quick Links</h4>
-            <div class="footer-line"></div>
-            <ul class="quick-links">
-              <li><a href="./index.html">» Home</a></li>
-              <li><a href="./about.html">» About</a></li>
-              <li><a href="./experience.html">» Your Experience</a></li>
-              <li><a href="./gallery.html">» Gallery</a></li>
-              <li><a href="./contact.html">» Contact us</a></li>
-              <li><a href="./book.html">» Book with us</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Donate</h4>
-            <div class="footer-line"></div>
-            <p style="margin-bottom: 1.5rem; color: #fff;">Donate for a great cause!</p>
-            <button class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; letter-spacing: 0.05em; box-shadow: none;" onclick="window.location.href='./donate.html'">DONATE TO US</button>
-          </div>
-          <div class="footer-col">
-            <h4>Stay in Touch</h4>
-            <div class="footer-line"></div>
-            <div class="social-icons">
-              <a href="#" class="social-icon" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-              <a href="#" class="social-icon" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </a>
+    <section class="container">
+        <div class="split-grid">
+            <div class="about-text reveal">
+                <div class="huge-stat">350+</div>
+                <h2>The Crisis</h2>
+                <p>Over 350 rhinos are poached in the northern reserves in a single year. That's one every day of the year. The crisis is urgent, and it's happening right now.</p>
+                <p>Rhino Save & Protect is an NGO run by passionate bush-pilots and veterinarians. We donate the majority of the hours required for anti-poaching aerial surveillance and emergency medical treatment.</p>
+                <h3 style="color: var(--white); margin-top: 4rem; font-size: 1.2rem; letter-spacing: 0.2em;">Operational Partners</h3>
+                <ul class="partner-list">
+                    <li>Rhino 911</li>
+                    <li>Madikwe Wildlife</li>
+                    <li>Heli-Game Services</li>
+                    <li>Mankwe Reserve</li>
+                    <li>Thabatholo Reserve</li>
+                    <li>Indigo Heli</li>
+                </ul>
             </div>
-          </div>
+            <div class="about-visual reveal">
+                <div style="width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
+                    <img src="exp_v2.png" alt="Operational Field" style="width: 100%; filter: grayscale(0.5) contrast(1.5);">
+                </div>
+                <div class="mission-overlay-card reveal">
+                    <h3>Tactical Conservation</h3>
+                    <p>What makes us different is that we give you an opportunity to join the rangers and teams to participate in projects on the ground, geared to save our rhino and wildlife.</p>
+                </div>
+            </div>
         </div>
-      </footer>
-    </div>
-    <script type="module" src="./main.js"></script>
-  </body>
+    </section>
+
+    <section class="mission" style="background: var(--white); color: var(--black); padding: 12rem 0;">
+        <div class="container text-center reveal">
+            <h2 style="font-size: 4rem; margin-bottom: 2rem;">Entirely Dependent On Your Help</h2>
+            <div class="accent-line" style="margin: 0 auto 3rem;"></div>
+            <p style="max-width: 800px; margin: 0 auto 4rem; font-size: 1.3rem; opacity: 0.7;">The field-rangers, darting equipment, and medical materials have to be covered. These teams work tirelessly to protect our wildlife and are entirely dependent on your involvement.</p>
+            <div class="btn-center">
+                <a href="donate.html" class="btn btn-solid" style="padding: 1.5rem 4rem;">Support the Unit</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col reveal">
+                    <img src="./logo.webp" alt="Rhino Save & Protect" style="height: 100px; margin-bottom: 2rem; filter: brightness(1.2);">
+                    <h4>The Mission</h4>
+                    <p>Rhino Save & Protect is a NGO operated by specialists to ensure the survival of the South African Rhino through direct, tactical action.</p>
+                    <div class="social-strip">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">LI</a>
+                    </div>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Operational Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">The Team</a></li>
+                        <li><a href="experience.html">Your Experience</a></li>
+                        <li><a href="gallery.html">Operation Gallery</a></li>
+                        <li><a href="donate.html">Supply Fund</a></li>
+                        <li><a href="contact.html">Incident Report</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Supply the Frontline</h4>
+                    <p>Direct funding for aviation fuel, night-vision equipment, and field-medical materials.</p>
+                    <a href="donate.html" class="btn btn-solid" style="padding: 1rem 2rem;">Initiate Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2024 Rhino Save & Protect. Tactical Conservation.</span>
+                <span>South Africa · Bush Ops Unit</span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main_v2.js"></script>
+</body>
 </html>

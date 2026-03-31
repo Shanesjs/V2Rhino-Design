@@ -1,142 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Contact - Get in touch with Rhino Save & Protect." />
-    <title>Contact Us - Rhino Save & Protect</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contact the Unit | Rhino Save & Protect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_v2.css">
     <style>
-      html, body { background-color: #131313 !important; }
-      .page-loader {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: #131313; z-index: 9999; pointer-events: none;
-        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
-      }
-      .page-loader.fade-out { opacity: 0; visibility: hidden; }
+        .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 8rem; align-items: start; }
+        .contact-info { color: var(--white); }
+        .contact-info h2 { font-size: 4rem; color: var(--earth); margin-bottom: 2rem; }
+        .contact-info p { font-size: 1.2rem; opacity: 0.7; line-height: 1.6; margin-bottom: 4rem; }
+        .contact-method { border-left: 1px solid var(--orange); padding-left: 2rem; margin-bottom: 3rem; }
+        .contact-method h4 { font-size: 0.9rem; letter-spacing: 0.2em; color: var(--white); opacity: 0.5; margin-bottom: 0.5rem; }
+        .contact-method p { font-size: 1.4rem; color: var(--earth); font-family: 'Cormorant Garamond', serif; opacity: 1; margin: 0; }
+        .contact-form { background: var(--white); padding: 5rem; border-radius: 20px; box-shadow: 0 40px 100px rgba(0,0,0,0.4); color: var(--black); }
+        .contact-form h3 { font-size: 2.5rem; margin-bottom: 3rem; color: var(--black); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 2.5rem; text-align: left; }
+        .form-group label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(0,0,0,0.4); margin-bottom: 0.8rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); font-family: 'Barlow', sans-serif; background: #F9F9F9; transition: var(--transition-fast); }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--orange); outline: none; background: #FFF; }
+        .form-group textarea { height: 150px; resize: none; }
+        @media (max-width: 991px) { .contact-grid { grid-template-columns: 1fr; gap: 4rem; } }
     </style>
-  </head>
-  <body>
-    <div class="page-loader" id="page-loader"></div>
-    <div id="app">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <a href="./index.html" class="logo-link">
-          <img src="./logo.webp" alt="Rhino Save & Protect Logo" class="logo-img" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./donate.html">DONATE</a></li>
-          <li><a href="./experience.html">YOUR EXPERIENCE</a></li>
-          <li><a href="./gallery.html">GALLERY</a></li>
-          <li><a href="./contact.html" class="active">CONTACT US</a></li>
-          <li><a href="./book.html">BOOK</a></li>
-        </ul>
-        <div class="menu-btn" id="menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+</head>
+<body class="contact-page">
+    <div id="page-transition"></div>
 
-      <div class="mobile-overlay" id="mobile-overlay">
-        <div class="mobile-menu-logo" style="margin-bottom: 3rem; opacity: 0.8;">
-          <img src="./logo.webp" alt="Logo" style="max-width: 150px;" />
-        </div>
-        <ul class="mobile-nav-links">
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./donate.html">DONATE</a></li>
-          <li><a href="./experience.html">YOUR EXPERIENCE</a></li>
-          <li><a href="./gallery.html">GALLERY</a></li>
-          <li><a href="./contact.html" class="active">CONTACT US</a></li>
-          <li><a href="./book.html">BOOK</a></li>
-        </ul>
-      </div>
-
-      <!-- Hero Section -->
-      <section class="hero" id="hero-section" style="min-height: 40vh;">
-        <div class="hero-logo-watermark">
-          <img src="./logo.png" alt="" />
-        </div>
-        <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
-          <h1>Contact Us</h1>
-        </div>
-      </section>
-
-      <!-- Main Layout -->
-      <section class="services" style="z-index: 2; margin-top: -2px; padding: 6rem 5vw;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(19, 19, 19, 1) 0%, rgba(19, 19, 19, 1) 10%, rgba(19, 19, 19, 0.45) 50%, rgba(19, 19, 19, 1) 100%); z-index: 1;"></div>
-        <div class="service-glow-orb" style="z-index: 1;"></div>
-        
-        <div class="split-layout fade-up" style="position: relative; z-index: 2; align-items: stretch; margin-top: 4rem;">
-          <!-- Left: Contact Information -->
-          <div class="text-block" style="padding-right: 4rem; display: flex; flex-direction: column; justify-content: center;">
-            <h2 class="editorial-headline" style="font-size: 3rem; margin-bottom: 2rem;">REACH BASE CAMP.</h2>
-            <p class="lead-text" style="font-size: 1.25rem;">Whether you are looking to become a corporate partner, join an experience, or require more information regarding donations, please reach out to us below.</p>
-            
-            <div style="margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 3rem;">
-              <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.5rem; text-transform: uppercase;">Direct Intel</h3>
-              <p style="font-size: 1.2rem; color: #fff; line-height: 1.8;">
-                Phone 1: +27 84 219 9000<br>
-                Phone 2: +27 82 576 6190<br>
-                Email: info@rhinosaveandprotect.com<br>
-              </p>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./logo.webp" alt="Rhino Save & Protect">
+                <span style="font-size: 0.7rem; opacity: 0.5; margin-left: 5px;">V2</span>
+            </a>
+            <div class="nav-wrapper" id="nav-wrapper">
+                <div class="nav-links">
+                    <a href="index.html">HOME</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="donate.html">DONATE</a>
+                    <a href="experience.html">YOUR EXPERIENCE</a>
+                    <a href="gallery.html">GALLERY</a>
+                    <a href="contact.html" class="active">CONTACT</a>
+                </div>
             </div>
-          </div>
-          
-          <!-- Right: Contact Form -->
-          <div class="mission-card" style="margin-top: 0;">
-            <h3 style="color: #fff; font-size: 2rem; margin-bottom: 2rem;">Send a Message</h3>
-            <form id="contactForm" onsubmit="event.preventDefault(); alert('Message transmission protocol logged! Backend required for dispatch.');">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <select id="subject" name="subject" class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F27131%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: .65rem auto;">
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Donation Question">Donation Info</option>
-                  <option value="Experience Booking">Experience Info</option>
-                  <option value="Press/Media">Press/Media</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" class="form-control" placeholder="How can we help?" required></textarea>
-              </div>
-              
-              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">TRANSMIT</button>
-            </form>
-          </div>
+            <div class="nav-cta">
+                <a href="book.html" class="book-btn">BOOK</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-      </section>
+    </nav>
 
-      <!-- Footer -->
-      <footer class="footer fade-up delay-1">
-        <!-- Minimal Footer re-use -->
-        <div class="footer-grid">
-          <div class="footer-col" style="grid-column: span 12; text-align: center;">
-            <img src="./logo.webp" alt="Logo" style="max-width: 200px; margin-bottom: 2rem; opacity: 0.8;" />
-            <p>© 2026 Rhino Save & Protect</p>
-          </div>
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-bg" style="background-image: linear-gradient(to bottom, rgba(44, 46, 30, 0.6), rgba(20, 20, 16, 0.95)), url('hero_v2.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Operational HQ</h1>
+            <p>Intelligence reporting. Press inquiries. Strategic partnerships. Let's engage.</p>
         </div>
-      </footer>
+    </section>
+
+    <div class="container" style="margin-top: -10rem; position: relative; z-index: 10;">
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <h2>Field Relay</h2>
+                <div class="accent-line" style="margin-left: 0;"></div>
+                <p>For urgent operational queries or strategic partnership inquiries, use our direct field relays. We monitor lines 24/7 during active missions.</p>
+                
+                <div class="contact-method">
+                    <h4>Direct Voice</h4>
+                    <p>+27 84 219 9000</p>
+                    <p>+27 82 576 6190</p>
+                </div>
+                <div class="contact-method">
+                    <h4>Encrypted Relay</h4>
+                    <p>info@rhinosaveandprotect.com</p>
+                </div>
+                <div class="contact-method">
+                    <h4>Operational Area</h4>
+                    <p>Limpopo Province, South Africa</p>
+                </div>
+            </div>
+            <div class="contact-form reveal">
+                <h3>Submit Intel</h3>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Agent Name</label>
+                            <input type="text" placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Relay Email</label>
+                            <input type="email" placeholder="email@address.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Mission Focus</label>
+                        <select style="width: 100%; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); font-family: 'Barlow', sans-serif;">
+                            <option>Expedition Inquiry</option>
+                            <option>Donation Intelligence</option>
+                            <option>Press & Media</option>
+                            <option>Strategic Partnership</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message Intelligence</label>
+                        <textarea placeholder="Direct communication to our team..."></textarea>
+                    </div>
+                    <button class="btn btn-solid" style="width: 100%; display: block; border-radius: 12px;">Transmit Message</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <script type="module" src="./main.js"></script>
-  </body>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col reveal">
+                    <img src="./logo.webp" alt="Rhino Save & Protect" style="height: 100px; margin-bottom: 2rem; filter: brightness(1.2);">
+                    <h4>The Mission</h4>
+                    <p>Rhino Save & Protect is a NGO operated by specialists to ensure the survival of the South African Rhino through direct, tactical action.</p>
+                    <div class="social-strip">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">LI</a>
+                    </div>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Operational Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">The Team</a></li>
+                        <li><a href="experience.html">Your Experience</a></li>
+                        <li><a href="gallery.html">Operation Gallery</a></li>
+                        <li><a href="donate.html">Supply Fund</a></li>
+                        <li><a href="contact.html">Incident Report</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Supply the Frontline</h4>
+                    <p>Direct funding for aviation fuel, night-vision equipment, and field-medical materials.</p>
+                    <a href="donate.html" class="btn btn-solid" style="padding: 1rem 2rem;">Initiate Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2024 Rhino Save & Protect. Tactical Conservation.</span>
+                <span>South Africa · Bush Ops Unit</span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main_v2.js"></script>
+</body>
 </html>

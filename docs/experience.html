@@ -1,169 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Your Experience - Join Rhino Save & Protect in the field." />
-    <title>Your Experience - Rhino Save & Protect</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Your Conservation Experience | Rhino Save & Protect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
     <style>
-      html, body { background-color: #131313 !important; }
-      .page-loader {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: #131313; z-index: 9999; pointer-events: none;
-        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
-      }
-      .page-loader.fade-out { opacity: 0; visibility: hidden; }
+        .exp-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .exp-hero { padding: 5rem 0; background: var(--black); }
+        .exp-hero h2 { font-size: 4.5rem; text-align: center; color: var(--earth); margin-top: 10rem; }
+        .exp-description { max-width: 800px; margin: 4rem auto; text-align: center; font-size: 1.4rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+        .exp-op-banner { height: 70vh; background: url('./assets/hero_v2-wuZIm5fs.png') center/cover no-repeat fixed; overflow: hidden; position: relative; border-radius: 40px; margin: 0 4rem; }
+        .exp-op-banner::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, var(--black)); }
     </style>
-    <script type="module" crossorigin src="./assets/main-BXT6RBqD.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-BAcfP6vm.css">
-  </head>
-  <body>
-    <div class="page-loader" id="page-loader"></div>
-    <div id="app">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <a href="./index.html" class="logo-link">
-          <img src="./logo.webp" alt="Rhino Save & Protect Logo" class="logo-img" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./donate.html">DONATE</a></li>
-          <li><a href="./experience.html" class="active">YOUR EXPERIENCE</a></li>
-          <li><a href="./gallery.html">GALLERY</a></li>
-          <li><a href="./contact.html">CONTACT US</a></li>
-          <li><a href="./book.html">BOOK</a></li>
-        </ul>
-        <div class="menu-btn" id="menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+  <script type="module" crossorigin src="./assets/main_v2-BMjddU4z.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main_v2-CfGc09GS.css">
+</head>
+<body class="experience-page">
+    <div id="page-transition"></div>
 
-      <div class="mobile-overlay" id="mobile-overlay">
-        <div class="mobile-menu-logo" style="margin-bottom: 3rem; opacity: 0.8;">
-          <img src="./logo.webp" alt="Logo" style="max-width: 150px;" />
-        </div>
-        <ul class="mobile-nav-links">
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./donate.html">DONATE</a></li>
-          <li><a href="./experience.html" class="active">YOUR EXPERIENCE</a></li>
-          <li><a href="./gallery.html">GALLERY</a></li>
-          <li><a href="./contact.html">CONTACT US</a></li>
-          <li><a href="./book.html">BOOK</a></li>
-        </ul>
-      </div>
-
-      <!-- Hero Section -->
-      <section class="hero" id="hero-section" style="min-height: 50vh;">
-        <div class="hero-logo-watermark">
-          <img src="./logo.png" alt="" />
-        </div>
-        <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
-          <h1>Your Experience</h1>
-        </div>
-      </section>
-
-      <!-- Main Content Container -->
-      <section class="services" style="z-index: 2; margin-top: -2px; padding: 8rem 5vw;">
-        <!-- CSS Cinematic Animation Background (Pitch Black Buffer & Glowing Gradient) -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(19, 19, 19, 1) 0%, rgba(19, 19, 19, 1) 10%, rgba(19, 19, 19, 0.45) 50%, rgba(19, 19, 19, 1) 100%); z-index: 1;"></div>
-        </div>
-
-        <div class="service-glow-orb" style="z-index: 1;"></div>
-
-        <!-- Experience Content -->
-        <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;">
-          <h2 class="meet-title fade-up">THE FRONTLINE</h2>
-          <p class="lead-text fade-up delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 5rem auto;">
-            Join our expert rangers and pilots on the ground. We provide a hands-on, highly immersive involvement program where you become part of the actual anti-poaching and notching operations.
-          </p>
-
-          <div class="grid fade-up delay-2">
-            <!-- Experience Card 1 -->
-            <div class="card" onclick="transitionTo('./book.html')">
-              <h3>Aerial Patrol Operations</h3>
-              <p>Climb aboard our specialized pursuit helicopters. Experience low-level tactical flying as our pilots survey the reserves, identify high-risk zones, and monitor the rhino herds from the air.</p>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./logo.webp" alt="Rhino Save & Protect">
+                <span style="font-size: 0.7rem; opacity: 0.5; margin-left: 5px;">V2</span>
+            </a>
+            <div class="nav-wrapper" id="nav-wrapper">
+                <div class="nav-links">
+                    <a href="index.html">HOME</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="donate.html">DONATE</a>
+                    <a href="experience.html" class="active">YOUR EXPERIENCE</a>
+                    <a href="gallery.html">GALLERY</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
             </div>
-            
-            <!-- Experience Card 2 -->
-            <div class="card" onclick="transitionTo('./book.html')">
-              <h3>Rhino Notching Clinics</h3>
-              <p>Work directly alongside world-class veterinarians. Assist in the physical darting process, gathering DNA samples, and inserting highly technical tracking microchips into sedated rhinos.</p>
+            <div class="nav-cta">
+                <a href="book.html" class="book-btn">BOOK</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            
-            <!-- Experience Card 3 -->
-            <div class="card" onclick="transitionTo('./book.html')">
-              <h3>Ground Tracking Missions</h3>
-              <p>Learn the ancient and critical art of tracking on foot. Join the K9 units and ground patrols to analyze tracks, identify poaching syndicates' movements, and secure the perimeter.</p>
-            </div>
-          </div>
         </div>
-      </section>
+    </nav>
 
-      <!-- CTA Banner -->
-      <section class="about-content" style="padding: 0 5vw;">
-        <div class="team-banner fade-up delay-3" style="margin-top: 5rem; margin-bottom: 5rem;">
-          <div class="banner-split">
-            <div class="banner-image"></div>
-            <div class="banner-text">
-              <div>
-                <h3 style="margin-bottom: 2rem;">Ready to deploy?</h3>
-                <p style="color: var(--text-secondary); font-size: 1.25rem; line-height: 1.6; margin-bottom: 2.5rem;">The reserves are active, and our teams are moving. Lock in your dates to join the frontline.</p>
-                <button class="btn btn-primary" onclick="window.location.href='./book.html'" style="padding: 1.2rem 2.5rem; font-size: 1.1rem;">BOOK YOUR EXPERIENCE</button>
-              </div>
-            </div>
-          </div>
+    <section class="exp-hero reveal">
+        <div class="container">
+            <h2>The Frontline Immersion</h2>
+            <p class="exp-description">This is not a safari. This is an invitation to witness and contribute to the high-stakes world of rhino conservation from the absolute front line.</p>
         </div>
-      </section>
+    </section>
 
-      <!-- Footer -->
-      <footer class="footer fade-up delay-4">
-        <!-- Re-use footer here -->
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h4>Contact us</h4>
-            <div class="footer-line"></div>
-            <p>+27 84 219 9000</p>
-            <p>+27 82 576 6190</p>
-            <p>info@rhinosaveandprotect.com</p>
-          </div>
-          <div class="footer-col">
-            <h4>Quick Links</h4>
-            <div class="footer-line"></div>
-            <ul class="quick-links">
-              <li><a href="./index.html">» Home</a></li>
-              <li><a href="./about.html">» About</a></li>
-              <li><a href="./experience.html">» Your Experience</a></li>
-              <li><a href="./gallery.html">» Gallery</a></li>
-              <li><a href="./contact.html">» Contact us</a></li>
-              <li><a href="./book.html">» Book with us</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Donate</h4>
-            <div class="footer-line"></div>
-            <p style="margin-bottom: 1.5rem; color: #fff;">Donate for a great cause!</p>
-            <button class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;" onclick="window.location.href='./donate.html'">DONATE TO US</button>
-          </div>
-          <div class="footer-col">
-            <h4>Stay in Touch</h4>
-            <div class="footer-line"></div>
-            <div class="social-icons">
-              <a href="#" class="social-icon">Instagram</a>
-              <a href="#" class="social-icon">Facebook</a>
+    <div class="exp-op-banner reveal"></div>
+
+    <section class="container">
+        <div class="exp-detail-grid reveal">
+            <div class="exp-card" style="background: var(--white); padding: 4rem; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); color: var(--black);">
+                <h3>What Makes Us Different?</h3>
+                <div class="accent-line" style="margin-left: 0;"></div>
+                <p style="font-size: 1.1rem; color: rgba(0,0,0,0.7); margin-bottom: 2rem;">Rhino Save & Protect offers a tangible way to participate. By booking an experience, you are directly funding a tactical operation that you will observe and support from the field.</p>
+                <ul class="footer-links" style="opacity: 1; color: var(--black);">
+                    <li style="margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem;">» Active Anti-Poaching Patrols</li>
+                    <li style="margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem;">» Light Aircraft Aerial Surveillance</li>
+                    <li style="margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem;">» Professional Vet Treatments</li>
+                    <li style="margin-bottom: 1rem;">» Rhino Relocation and Notching</li>
+                </ul>
             </div>
-          </div>
+            <div class="exp-card reveal" style="padding: 4rem;">
+                <h3 style="color: var(--white); font-size: 2.5rem; margin-bottom: 2rem;">Operational Integrity</h3>
+                <p style="color: rgba(255,255,255,0.7); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.8;">Our success is driven by highly skilled, passionate teams—game pilots, expert trackers, field rangers, and world-class veterinarians working in tandem with the latest infrared and AI surveillance technologies.</p>
+                <p style="color: rgba(255,255,255,0.7); font-size: 1.2rem; line-height: 1.8;">By joining us, you are witnessing the bleeding edge of modern conservation efforts. This is a rare access point into a field typically closed to the public.</p>
+                <div class="btn-center" style="justify-content: flex-start; margin-top: 2rem;">
+                    <a href="book.html" class="btn btn-solid">Inquire with the Team</a>
+                </div>
+            </div>
         </div>
-      </footer>
-    </div>
-  </body>
+    </section>
+
+    <section class="ops" style="background: var(--parchment); margin-top: 10rem; padding: 12rem 0;">
+        <div class="container text-center reveal">
+            <h2 style="font-size: 4rem; color: var(--black);">Ready to Deploy?</h2>
+            <div class="accent-line" style="margin: 3rem auto;"></div>
+            <p style="max-width: 700px; margin: 0 auto 4rem; font-size: 1.2rem; color: rgba(0,0,0,0.6);">Experiences are limited by operational needs. Each expedition is unique and relies heavily on seasonal conservation requirements.</p>
+            <div class="btn-center">
+                <a href="book.html" class="btn btn-solid" style="padding: 1.5rem 4rem;">Submit Expedition Request</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col reveal">
+                    <img src="./logo.webp" alt="Rhino Save & Protect" style="height: 100px; margin-bottom: 2rem; filter: brightness(1.2);">
+                    <h4>The Mission</h4>
+                    <p>Rhino Save & Protect is a NGO operated by specialists to ensure the survival of the South African Rhino through direct, tactical action.</p>
+                    <div class="social-strip">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">LI</a>
+                    </div>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Operational Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">The Team</a></li>
+                        <li><a href="experience.html">Your Experience</a></li>
+                        <li><a href="gallery.html">Operation Gallery</a></li>
+                        <li><a href="donate.html">Supply Fund</a></li>
+                        <li><a href="contact.html">Incident Report</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Supply the Frontline</h4>
+                    <p>Direct funding for aviation fuel, night-vision equipment, and field-medical materials.</p>
+                    <a href="donate.html" class="btn btn-solid" style="padding: 1rem 2rem;">Initiate Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2024 Rhino Save & Protect. Tactical Conservation.</span>
+                <span>South Africa · Bush Ops Unit</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>

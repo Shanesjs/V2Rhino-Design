@@ -1,185 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Donate to Rhino Save & Protect." />
-    <title>Donate - Rhino Save & Protect</title>
-    <!-- Fonts: Manrope & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Donate to the Frontline | Rhino Save & Protect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_v2.css">
     <style>
-      html, body { background-color: #131313 !important; }
-      .page-loader {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: #131313; z-index: 9999; pointer-events: none;
-        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
-      }
-      .page-loader.fade-out { opacity: 0; visibility: hidden; }
+        .donation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+        .donation-card { background: var(--white); padding: 5rem; border-radius: 20px; box-shadow: 0 40px 100px rgba(0,0,0,0.4); text-align: center; color: var(--black); }
+        .donation-card h3 { font-size: 2.5rem; color: var(--black); margin-bottom: 2rem; }
+        .donation-card p { opacity: 0.7; margin-bottom: 3rem; font-size: 1.1rem; }
+        .donation-amounts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
+        .amount-btn { padding: 1.5rem; border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; font-weight: 700; font-family: 'Barlow', sans-serif; cursor: pointer; transition: var(--transition-fast); }
+        .amount-btn:hover, .amount-btn.active { border-color: var(--orange); background: var(--orange); color: var(--white); }
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+        .form-group input { width: 100%; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); font-family: 'Barlow', sans-serif; }
     </style>
-  </head>
-  <body>
-    <div class="page-loader" id="page-loader"></div>
-    <div id="app">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <a href="./index.html" class="logo-link">
-          <img src="./logo.png" alt="Rhino Save & Protect Logo" class="logo-img" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./donate.html" class="active">DONATE</a></li>
-          <li><a href="./experience.html">YOUR EXPERIENCE</a></li>
-          <li><a href="./gallery.html">GALLERY</a></li>
-          <li><a href="./contact.html">CONTACT US</a></li>
-          <li><a href="./book.html">BOOK</a></li>
-        </ul>
-        <div class="menu-btn" id="menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+</head>
+<body class="donate-page">
+    <div id="page-transition"></div>
 
-      <div class="mobile-overlay" id="mobile-overlay">
-        <div class="mobile-menu-logo" style="margin-bottom: 3rem; opacity: 0.8;">
-          <img src="./logo.webp" alt="Logo" style="max-width: 150px;" />
-        </div>
-        <ul class="mobile-nav-links">
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./about.html">ABOUT</a></li>
-          <li><a href="./donate.html" class="active">DONATE</a></li>
-          <li><a href="./experience.html">YOUR EXPERIENCE</a></li>
-          <li><a href="./gallery.html">GALLERY</a></li>
-          <li><a href="./contact.html">CONTACT US</a></li>
-          <li><a href="./book.html">BOOK</a></li>
-        </ul>
-      </div>
-
-      <!-- Hero Section -->
-      <section class="hero" id="hero-section" style="min-height: 50vh;">
-        <div class="hero-logo-watermark">
-          <img src="./logo.png" alt="" />
-        </div>
-        <div class="hero-content fade-up" style="max-width: 900px; padding-top: 10vh;">
-          <h1>Donate & Make A Difference</h1>
-        </div>
-      </section>
-
-      <!-- Donate Details Layout -->
-      <section class="about-content">
-        <div class="split-layout fade-up delay-1" style="align-items: stretch; gap: 4rem;">
-          
-          <!-- Left Column: Why Donate & Impact -->
-          <div class="text-block">
-            <div class="mission-card" style="margin-top: 0;">
-              <h2 class="editorial-headline" style="margin-bottom: 2rem;">WHY DONATE</h2>
-              <p style="margin-bottom: 1.5rem;">Donations of any amounts are put to use in a number of ways. You can physically experience your contribution, by joining our teams in rhino notchings and every day projects. Be a voluntary ranger, bring your family, friends, colleagues or customers and join the battle against the cruelty of poaching. Make a donation to actively make a difference. Your contribution goes a long way to protect and save rhino, rangers and field-teams, dedicated to fighting the battle raging against them.</p>
-              
-              <p style="margin-bottom: 1.5rem;">Using an unique technology and methods, we are able to make an impact on the fight against the brutal poaching of rhino and endangered species.</p>
-              
-              <p style="margin-bottom: 3rem; font-weight: 700; color: #fff;">Your experience fee directly empowers our full-time professionals to do their work in protecting the future of our wildlife.</p>
-
-              <h3 class="orange-title" style="font-size: 1.3rem;">What your donations go towards:</h3>
-              <ul class="partner-list" style="margin-top: 1.5rem;">
-                <li>Rhino horn trimming – in some reserves all rhino's were dehorned</li>
-                <li>None of the dehorned rhino have been poached as a direct result of these results</li>
-                <li>Surveillance equipment installed</li>
-                <li>Anti-poaching guard equipment</li>
-                <li>Orphaned rhino's have been saved and nurtured back to health</li>
-                <li>Food supplies and medical costs</li>
-                <li>Medical expenses for injured animals</li>
-                <li>DNA sampling that directly leads to the arrest of poachers and more successful conviction</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Right Column: Donation Contact Form -->
-          <div class="text-block">
-            <h2 class="editorial-headline" style="margin-bottom: 0.5rem; text-transform: none;">Question about Donations?</h2>
-            <p class="lead-text" style="margin-bottom: 2.5rem; color: var(--text-secondary);">Please use our form to get in touch with us and we will get back to you.</p>
-
-            <div class="mission-card" style="margin-top: 0; padding: 3rem; border-left: none; border-top: 6px solid var(--primary);">
-              <form action="#" method="POST" id="donation-form">
-                <div class="form-group">
-                  <label for="name">Your Name*</label>
-                  <input type="text" id="name" name="name" class="form-control" required>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./logo.webp" alt="Rhino Save & Protect">
+                <span style="font-size: 0.7rem; opacity: 0.5; margin-left: 5px;">V2</span>
+            </a>
+            <div class="nav-wrapper" id="nav-wrapper">
+                <div class="nav-links">
+                    <a href="index.html">HOME</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="donate.html" class="active">DONATE</a>
+                    <a href="experience.html">YOUR EXPERIENCE</a>
+                    <a href="gallery.html">GALLERY</a>
+                    <a href="contact.html">CONTACT</a>
                 </div>
+            </div>
+            <div class="nav-cta">
+                <a href="book.html" class="book-btn">BOOK</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-bg" style="background-image: linear-gradient(to bottom, rgba(44, 46, 30, 0.6), rgba(20, 20, 16, 0.95)), url('hero_v2.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Supply the Frontline</h1>
+            <p>Direct funding. Tactical gear. Medical supplies. Every cent goes to saving lives.</p>
+        </div>
+    </section>
+
+    <div class="container" style="margin-top: -10rem; position: relative; z-index: 10;">
+        <div class="donation-grid">
+            <div class="donation-info reveal">
+                <h2 style="color: var(--white); font-size: 4rem; margin-bottom: 2rem;">Where Your Funds Go</h2>
+                <div class="accent-line" style="margin-left: 0;"></div>
+                <p style="color: rgba(255,255,255,0.7); font-size: 1.3rem; margin-bottom: 3rem;">Rhino Save & Protect is unique because our leaders donate their time. Your donation is strictly for logistical costs that enable our team to engage poachers and treat animals.</p>
+                <div class="exp-item" style="background: rgba(255,255,255,0.05); color: var(--white); margin-bottom: 1.5rem; border-radius: 12px;">
+                    <div>
+                        <h4>Aviation Fuel</h4>
+                        <p style="color: rgba(255,255,255,0.6);">Keeping our airborne surveillance units in the sky for daily patrols.</p>
+                    </div>
+                </div>
+                <div class="exp-item" style="background: rgba(255,255,255,0.05); color: var(--white); margin-bottom: 1.5rem; border-radius: 12px;">
+                    <div>
+                        <h4>Medical Darts</h4>
+                        <p style="color: rgba(255,255,255,0.6);">Supplying veterinarians with critical anesthetic and surgical supplies.</p>
+                    </div>
+                </div>
+                <div class="exp-item" style="background: rgba(255,255,255,0.05); color: var(--white); margin-bottom: 1.5rem; border-radius: 12px;">
+                    <div>
+                        <h4>Tech Equipment</h4>
+                        <p style="color: rgba(255,255,255,0.6);">Maintaining high-end tracking devices and night-vision capabilities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="donation-card reveal">
+                <h3>Support the Frontline</h3>
+                <p>Support our specialist units on the ground. Please provide your contact information, and our logistics team will synchronize your contribution to the current field requirements.</p>
                 
                 <div class="form-group">
-                  <label for="email">Your Email*</label>
-                  <input type="email" id="email" name="email" class="form-control" required>
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your Name">
                 </div>
-
                 <div class="form-group">
-                  <label for="phone">Contact Number</label>
-                  <input type="tel" id="phone" name="phone" class="form-control">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="email@address.com">
                 </div>
-
                 <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" class="form-control">
+                    <label>Intended Support Focus</label>
+                    <select style="width: 100%; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); font-family: 'Barlow', sans-serif;">
+                        <option>General Support Fund</option>
+                        <option>Aviation Fuel Logistics</option>
+                        <option>Specialist Vet Supplies</option>
+                        <option>Night Vision Equipment</option>
+                    </select>
                 </div>
-
-                <div class="form-group">
-                  <label for="message">Your Message</label>
-                  <textarea id="message" name="message" class="form-control"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Submit</button>
-              </form>
+                <a href="#" class="btn btn-solid" style="width: 100%; display: block; text-align: center; margin-top: 1rem;">Submit Support Initiative</a>
             </div>
-          </div>
-
         </div>
-      </section>
-      <!-- Footer -->
-      <footer class="footer fade-up delay-2">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h4>Contact us</h4>
-            <div class="footer-line"></div>
-            <p>+27 84 219 9000</p>
-            <p>+27 82 576 6190</p>
-            <p>info@rhinosaveandprotect.com</p>
-          </div>
-          <div class="footer-col">
-            <h4>Quick Links</h4>
-            <div class="footer-line"></div>
-            <ul class="quick-links">
-              <li><a href="./index.html">» Home</a></li>
-              <li><a href="./about.html">» About</a></li>
-              <li><a href="./experience.html">» Your Experience</a></li>
-              <li><a href="./gallery.html">» Gallery</a></li>
-              <li><a href="./contact.html">» Contact us</a></li>
-              <li><a href="./book.html">» Book with us</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Donate</h4>
-            <div class="footer-line"></div>
-            <p style="margin-bottom: 1.5rem; color: #fff;">Donate for a great cause!</p>
-            <button class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; letter-spacing: 0.05em; box-shadow: none;" onclick="window.location.href='./donate.html'">DONATE TO US</button>
-          </div>
-          <div class="footer-col">
-            <h4>Stay in Touch</h4>
-            <div class="footer-line"></div>
-            <div class="social-icons">
-              <a href="#" class="social-icon" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-              <a href="#" class="social-icon" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
-    <script type="module" src="./main.js"></script>
-  </body>
+
+    <section class="ops" style="margin-top: 10rem;">
+        <div class="container text-center reveal">
+            <h2 style="font-size: 3rem;">Tax Exempt Support</h2>
+            <div class="accent-line" style="margin: 3rem auto;"></div>
+            <p style="max-width: 700px; margin: 0 auto; opacity: 0.6;">Rhino Save & Protect Fund is a registered Section 18A PBO. Your donation is tax-deductible in South Africa.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col reveal">
+                    <img src="./logo.webp" alt="Rhino Save & Protect" style="height: 100px; margin-bottom: 2rem; filter: brightness(1.2);">
+                    <h4>The Mission</h4>
+                    <p>Rhino Save & Protect is a NGO operated by specialists to ensure the survival of the South African Rhino through direct, tactical action.</p>
+                    <div class="social-strip">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">LI</a>
+                    </div>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Operational Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">The Team</a></li>
+                        <li><a href="experience.html">Your Experience</a></li>
+                        <li><a href="gallery.html">Operation Gallery</a></li>
+                        <li><a href="donate.html">Supply Fund</a></li>
+                        <li><a href="contact.html">Incident Report</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col reveal">
+                    <h4>Supply the Frontline</h4>
+                    <p>Direct funding for aviation fuel, night-vision equipment, and field-medical materials.</p>
+                    <a href="donate.html" class="btn btn-solid" style="padding: 1rem 2rem;">Initiate Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2024 Rhino Save & Protect. Tactical Conservation.</span>
+                <span>South Africa · Bush Ops Unit</span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main_v2.js"></script>
+</body>
 </html>
