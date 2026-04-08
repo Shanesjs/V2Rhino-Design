@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: Shanesjs/CMS_Enabled_Rhino_Design
+  branch: main # Changed to main based on typical modern defaults
+
+media_folder: "public/uploads"
+public_folder: "uploads"
+
+collections:
+  - name: "content"
+    label: "Site Content"
+    delete: false # Prevent accidental deletion of the entry
+    files:
+      - name: "general"
+        label: "Dynamic Imagery"
+        file: "public/content.json"
+        fields:
+          - label: "Primary Team Photo"
+            name: "primary_team_photo"
+            widget: "image"
+            hint: "Select the main photo for the 'About' section."
+          - label: "Gallery Items"
+            name: "gallery"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Image", name: "src", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Caption", name: "caption", widget: "string"}

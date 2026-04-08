@@ -1,0 +1,35 @@
+{
+  "primary_team_photo": "exp_v2.png",
+  "gallery": [
+    {
+      "src": "hero_v2.png",
+      "title": "Aerial Operations",
+      "caption": "Strategic Surveillance Patrol"
+    },
+    {
+      "src": "exp_v2.png",
+      "title": "Rhino Notching Clinic",
+      "caption": "Tactical Vet Support"
+    },
+    {
+      "src": "hero_v2.png",
+      "title": "Ground Patrols",
+      "caption": "Anti-Poaching Force Intervention"
+    },
+    {
+      "src": "exp_v2.png",
+      "title": "Darting Operations",
+      "caption": "Emergency Medical Intervention"
+    },
+    {
+      "src": "hero_v2.png",
+      "title": "Vet Treatment Units",
+      "caption": "Field Stabilization Surgery"
+    },
+    {
+      "src": "exp_v2.png",
+      "title": "Twilight Surveillance",
+      "caption": "High-Tech Night Watch"
+    }
+  ]
+}

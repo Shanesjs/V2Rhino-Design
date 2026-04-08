@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- CMS Dynamic Content Loading ---
+    loadDynamicContent();
+
     // Smooth Page Transitions
     document.querySelectorAll('a').forEach(link => {
         if (link.hostname === window.location.hostname && !link.hash && !link.target && !link.href.includes('mailto:')) {
@@ -65,6 +68,38 @@ document.addEventListener('DOMContentLoaded', () => {
         animateStats(stats);
     }
 });
+
+async function loadDynamicContent() {
+    try {
+        const response = await fetch('content.json');
+        const data = await response.json();
+
+        // Populate Team Photo (About Page)
+        const teamPhoto = document.getElementById('team-photo');
+        if (teamPhoto && data.primary_team_photo) {
+            teamPhoto.src = data.primary_team_photo;
+        }
+
+        // Populate Gallery (Gallery Page)
+        const galleryGrid = document.getElementById('gallery-grid');
+        if (galleryGrid && data.gallery) {
+            galleryGrid.innerHTML = data.gallery.map((item, index) => `
+                <div class="gallery-item reveal" style="transition-delay: ${index * 0.1}s;">
+                    <img src="${item.src}" alt="${item.title}" loading="lazy">
+                    <div class="caption">
+                        <h4>${item.title}</h4>
+                        <p>${item.caption}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-observe new elements for animations
+            document.querySelectorAll('.gallery-item.reveal').forEach(el => observer.observe(el));
+        }
+    } catch (error) {
+        console.error('Error loading CMS content:', error);
+    }
+}
 
 function animateStats(stats) {
     stats.forEach(stat => {
